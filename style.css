@@ -1,6 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%; 
+  width: 100%;
   background-color: #000; /* optional: matches your p5.js black background */
   color: #ccc; /* soft contrast for text */
   font-family: 'Helvetica', sans-serif;
@@ -13,9 +15,10 @@ canvas {
 
 /* Explanation section styling */
 #project-explanation {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -26,9 +29,9 @@ canvas {
 }
 
 #project-explanation img {
-  max-width: 100%;
-  max-width: 80000px;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 255, 0, 0.4); /* subtle green glow */
   margin-bottom: 20px;
