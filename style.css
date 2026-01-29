@@ -1,7 +1,42 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #000; /* optional: matches your p5.js black background */
+  color: #ccc; /* soft contrast for text */
+  font-family: 'Helvetica', sans-serif;
 }
+
 canvas {
   display: block;
+  margin: 0 auto;
 }
+
+/* Explanation section styling */
+#project-explanation {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#project-explanation h2 {
+  font-size: 1.8em;
+  color: #00ff00; /* green title to match your theme */
+  margin-bottom: 20px;
+}
+
+#project-explanation img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.4); /* subtle green glow */
+  margin-bottom: 20px;
+}
+
+#project-explanation p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0 auto;
+}
+
