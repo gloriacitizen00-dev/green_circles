@@ -1,9 +1,9 @@
 let tabla;
 let sorteo = [];
 
-// MATRIX VARIABLES
-let streams = [];
-let symbols = "アァカサタナハマヤャラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// matrix
+let cols = [];
+let symbols = "01アイウエオカキクケコ";
 
 function preload() {
   tabla = loadTable("tabla_palabras.csv", "csv");
@@ -11,42 +11,64 @@ function preload() {
 
 function setup() {
   createCanvas(800, 800);
-  textFont("monospace");
 
-  // posiciones aleatorias para tus datos
-  for (let i = 0; i < 100; i++) {
+  textFont("monospace");
+  textSize(18);
+
+  // posiciones
+  for (let i = 0; i < tabla.getRowCount(); i++) {
     sorteo.push(random(50, 750));
   }
 
-  // crear columnas matrix
+  // columnas matrix
   for (let x = 0; x < width; x += 20) {
-    streams.push(new Stream(x));
+    cols.push(random(height));
   }
 }
 
 function draw() {
-  // fondo negro semi-transparente
-  background(0, 150);
 
-  // ===== MATRIX BACKGROUND =====
-  for (let s of streams) {
-    s.update();
-    s.render();
+  // fondo transparente
+  background(0, 80);
+
+  // ===== MATRIX =====
+
+  fill(0, 255, 70);
+
+  for (let i = 0; i < cols.length; i++) {
+
+    let char = symbols.charAt(floor(random(symbols.length)));
+
+    text(char, i * 20, cols[i]);
+
+    cols[i] += random(5, 15);
+
+    if (cols[i] > height) {
+      cols[i] = 0;
+    }
   }
 
-  // ===== TU VISUALIZACIÓN =====
-  for (let i = 0; i < tabla.getRowCount(); i++) {
-    let rawValue = tabla.getString(i, 1);
-    let value = int(rawValue);
+  // ===== TUS DATOS =====
 
-    // si no es número, saltar
-    if (isNaN(value)) {
-      continue;
-    }
+  for (let i = 0; i < tabla.getRowCount(); i++) {
+
+    let value = int(tabla.getString(i, 1));
 
     let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20;
-    let y = map(value, 50, 259, 0, height) + cos(frameCount * 0.03 + i) * 20;
+
+    let y =
+      map(value, 50, 259, 0, 800) +
+      cos(frameCount * 0.03 + i) * 20;
+
     let r = map(value, 50, 230, 30, 100);
 
-    // círculos verdes
-    fill(0, 255
+    // círculo
+    fill(0, 255, 70, 120);
+    noStroke();
+    circle(x, y, r);
+
+    // texto
+    fill(255);
+    text(tabla.getString(i, 0), x, y);
+  }
+}
