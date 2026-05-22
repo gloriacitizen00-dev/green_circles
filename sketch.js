@@ -1,28 +1,26 @@
-let streams = [];
-let symbols = "アァカサタナハマヤャラワ0123456789";
-
 function setup() {
-  createCanvas(800, 800);
+
+  createCanvas(windowWidth, windowHeight);
 
   background(0);
 
-  textSize(20);
-  textFont("monospace");
+  textSize(32);
 
-  for (let x = 0; x < width; x += 20) {
-    streams.push({
-      x: x,
-      y: random(-800, 0),
-      speed: random(4, 10)
-    });
-  }
+  fill(0,255,70);
 }
 
 function draw() {
 
-  background(0, 90);
+  background(0);
 
-  fill(0, 255, 70);
+  text(
+    "MATRIX TEST",
+    width/2 - 100,
+    height/2
+  );
+
+  circle(mouseX, mouseY, 50);
+}
 
   for (let s of streams) {
 
