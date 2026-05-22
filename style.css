@@ -13,6 +13,13 @@ canvas {
   margin: 0 auto;
 }
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* detrás del contenido */
+}
+
 /* Explanation section styling */
 #project-explanation {
   width: 100%;
