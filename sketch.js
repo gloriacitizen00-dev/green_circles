@@ -1,37 +1,46 @@
-let tabla;
-let sorteo = [];
-
-function preload() {
-  tabla = loadTable("tabla_palabras.csv", "csv");
-}
+let circles = [];
 
 function setup() {
-  createCanvas(800, 800);
-  textFont("monospace");
+  createCanvas(windowWidth, windowHeight);
+  noStroke();
+  textAlign(CENTER, CENTER);
 
-  // posiciones aleatorias para tus datos
-  for (let i = 0; i < 100; i++) {
-    sorteo.push(random(50, 750));
+  // crear círculos iniciales
+  for (let i = 0; i < 50; i++) {
+    circles.push(new FallingCircle(random(width), random(-500, 0)));
   }
 }
 
 function draw() {
   background(0);
 
-  for (let i = 0; i < tabla.getRowCount(); i++) {
-    let value = int(tabla.getString(i, 1));
+  for (let c of circles) {
+    c.update();
+    c.render();
+  }
+}
 
-    let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20;
-    let y = map(value, 50, 259, 0, 800) + cos(frameCount * 0.03 + i) * 20;
-    let r = map(value, 50, 230, 30, 100);
+class FallingCircle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.speed = random(2, 6);
+    this.size = random(20, 50);
+    this.word = "Palabra"; // aquí puedes poner tu texto del CSV
+  }
 
-    // círculos verdes
-    fill(0, 255, 70, 120);
-    noStroke();
-    circle(x, y, r);
+  update() {
+    this.y += this.speed;
+    if (this.y > height + this.size) {
+      this.y = random(-200, 0); // reinicia arriba
+    }
+  }
 
-    // texto blanco
+  render() {
+    fill(0, 255, 70, 180);
+    ellipse(this.x, this.y, this.size);
     fill(255);
-    text(tabla.getString(i, 0), x, y);
+    textSize(14);
+    text(this.word, this.x, this.y);
   }
 }
