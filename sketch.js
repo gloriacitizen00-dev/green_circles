@@ -25,7 +25,6 @@ function setup() {
 }
 
 function draw() {
-
   // fondo negro semi-transparente
   background(0, 150);
 
@@ -37,56 +36,17 @@ function draw() {
 
   // ===== TU VISUALIZACIÓN =====
   for (let i = 0; i < tabla.getRowCount(); i++) {
+    let rawValue = tabla.getString(i, 1);
+    let value = int(rawValue);
 
-    let value = int(tabla.getString(i, 1));
+    // si no es número, saltar
+    if (isNaN(value)) {
+      continue;
+    }
 
     let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20;
-
-    let y =
-      map(value, 50, 259, 0, 800) +
-      cos(frameCount * 0.03 + i) * 20;
-
+    let y = map(value, 50, 259, 0, height) + cos(frameCount * 0.03 + i) * 20;
     let r = map(value, 50, 230, 30, 100);
 
     // círculos verdes
-    fill(0, 255, 70, 120);
-    noStroke();
-    circle(x, y, r);
-
-    // texto blanco
-    fill(255);
-    text(tabla.getString(i, 0), x, y);
-  }
-}
-
-// =========================
-// MATRIX CLASS
-// =========================
-
-class Stream {
-  constructor(x) {
-    this.x = x;
-    this.y = random(-1000, 0);
-    this.speed = random(4, 10);
-    this.length = random(5, 20);
-  }
-
-  update() {
-    this.y += this.speed;
-
-    if (this.y > height + 200) {
-      this.y = random(-500, 0);
-    }
-  }
-
-  render() {
-    for (let i = 0; i < this.length; i++) {
-
-      let char = random(symbols);
-
-      fill(0, 255, 70, 150 - i * 7);
-
-      text(char, this.x, this.y - i * 20);
-    }
-  }
-}
+    fill(0, 255
