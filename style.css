@@ -1,5 +1,3 @@
-
-
 html, body {
   margin: 0;
   padding: 0;
@@ -11,15 +9,9 @@ html, body {
 }
 
 canvas {
-  position: fixed;   /* se queda fijo como fondo */
-  top: 0;
-  left: 0;
   display: block;
-  margin: 0;
-  z-index: -1;       /* detrás del contenido */
+  margin: 0 auto;
 }
-
-
 
 /* Explanation section styling */
 #project-explanation {
