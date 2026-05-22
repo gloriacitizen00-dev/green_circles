@@ -12,12 +12,11 @@ canvas {
   position: fixed;   /* se queda fijo como fondo */
   top: 0;
   left: 0;
-  width: 100%;       /* ocupa toda la pantalla */
-  height: 100%;
   display: block;
-  margin: 0 auto;
+  margin: 0;
   z-index: -1;       /* detrás del contenido */
 }
+
 
 
 /* Explanation section styling */
