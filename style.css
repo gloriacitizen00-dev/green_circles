@@ -3,17 +3,17 @@ html, body {
   padding: 0;
   height: 100%; 
   width: 100%;
-  background-color: #000; /* optional: matches your p5.js black background */
-  color: #ccc; /* soft contrast for text */
+  background-color: #000; /* fondo negro */
+  color: #ccc;            /* texto gris */
   font-family: 'Helvetica', sans-serif;
 }
 
 canvas {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* centrado horizontal */
 }
 
-/* Explanation section styling */
+/* Sección de explicación */
 #project-explanation {
   width: 100%;
   max-width: 100%;
@@ -24,7 +24,7 @@ canvas {
 
 #project-explanation h2 {
   font-size: 1.8em;
-  color: #00ff00; /* green title to match your theme */
+  color: #00ff00; /* verde Matrix */
   margin-bottom: 20px;
 }
 
@@ -34,7 +34,7 @@ canvas {
   height: auto;
   object-fit: contain;
   border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 255, 0, 0.4); /* subtle green glow */
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.4);
   margin-bottom: 20px;
 }
 
@@ -45,7 +45,7 @@ canvas {
   margin: 0 auto;
 }
 
-/* Buttons styling */ 
+/* Botones */
 #nav-buttons { 
   text-align: center; 
   margin: 20px; 
@@ -64,5 +64,6 @@ canvas {
 } 
 
 #nav-buttons button:hover { 
-  background-color: #009900; color: #fff; 
+  background-color: #009900; 
+  color: #fff; 
 }
