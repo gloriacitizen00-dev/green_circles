@@ -1,74 +1,39 @@
-let tabla;
-let sorteo = [];
-
-// matrix
-let cols = [];
-let symbols = "01アイウエオカキクケコ";
-
-function preload() {
-  tabla = loadTable("tabla_palabras.csv", "csv");
-}
+let streams = [];
+let symbols = "アァカサタナハマヤャラワ0123456789";
 
 function setup() {
   createCanvas(800, 800);
 
+  background(0);
+
+  textSize(20);
   textFont("monospace");
-  textSize(18);
 
-  // posiciones
-  for (let i = 0; i < tabla.getRowCount(); i++) {
-    sorteo.push(random(50, 750));
-  }
-
-  // columnas matrix
   for (let x = 0; x < width; x += 20) {
-    cols.push(random(height));
+    streams.push({
+      x: x,
+      y: random(-800, 0),
+      speed: random(4, 10)
+    });
   }
 }
 
 function draw() {
 
-  // fondo transparente
-  background(0, 80);
-
-  // ===== MATRIX =====
+  background(0, 90);
 
   fill(0, 255, 70);
 
-  for (let i = 0; i < cols.length; i++) {
+  for (let s of streams) {
 
-    let char = symbols.charAt(floor(random(symbols.length)));
+    let char = symbols[floor(random(symbols.length))];
 
-    text(char, i * 20, cols[i]);
+    text(char, s.x, s.y);
 
-    cols[i] += random(5, 15);
+    s.y += s.speed;
 
-    if (cols[i] > height) {
-      cols[i] = 0;
+    if (s.y > height) {
+      s.y = random(-200, 0);
     }
-  }
-
-  // ===== TUS DATOS =====
-
-  for (let i = 0; i < tabla.getRowCount(); i++) {
-
-    let value = int(tabla.getString(i, 1));
-
-    let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20;
-
-    let y =
-      map(value, 50, 259, 0, 800) +
-      cos(frameCount * 0.03 + i) * 20;
-
-    let r = map(value, 50, 230, 30, 100);
-
-    // círculo
-    fill(0, 255, 70, 120);
-    noStroke();
-    circle(x, y, r);
-
-    // texto
-    fill(255);
-    text(tabla.getString(i, 0), x, y);
   }
 }
