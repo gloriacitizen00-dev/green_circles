@@ -14,11 +14,9 @@ function setup() {
 }
 
 function draw() {
-  background(0, 150); // negro con transparencia para dejar rastro
-
-  streams.forEach(stream => {
-    stream.render();
-  });
+  background(0);
+  fill(255,0,0);
+  circle(100,100,50);
 }
 
 class Stream {
