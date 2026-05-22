@@ -1,6 +1,6 @@
 let tabla;
 let sorteo = [];
-let streams = []; // para el efecto Matrix
+let streams = [];
 
 function preload() {
   tabla = loadTable("tabla_palabras.csv", "csv");
@@ -16,7 +16,7 @@ function setup() {
     sorteo.push(random(50, 750));
   }
 
-  // inicializar columnas de letras Matrix
+  // inicializar columnas Matrix
   let x = 0;
   for (let i = 0; i < width / 20; i++) {
     streams.push(new Stream(x, random(-1000, 0)));
@@ -25,7 +25,8 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  // fondo negro con transparencia para dejar rastro
+  background(0, 150);
 
   // --- Fondo Matrix ---
   streams.forEach(stream => {
@@ -56,7 +57,7 @@ class Stream {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.speed = random(2, 10);
+    this.speed = random(4, 12); // más rápido
     this.symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   }
 
