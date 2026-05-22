@@ -1,37 +1,35 @@
+let tabla;
+let sorteo = [];
+
+function preload() {
+  tabla = loadTable("tabla_palabras.csv", "csv");
+}
+
 function setup() {
-
   createCanvas(windowWidth, windowHeight);
+  textFont("monospace");
+  textSize(16);
 
-  background(0);
-
-  textSize(32);
-
-  fill(0,255,70);
+  for (let i = 0; i < tabla.getRowCount(); i++) {
+    sorteo.push(random(width));
+  }
 }
 
 function draw() {
+  background(0, 80);
 
-  background(0);
+  for (let i = 0; i < tabla.getRowCount(); i++) {
 
-  text(
-    "MATRIX TEST",
-    width/2 - 100,
-    height/2
-  );
+    let value = int(tabla.getString(i, 1));
 
-  circle(mouseX, mouseY, 50);
-}
+    let x = sorteo[i] + sin(frameCount * 0.05 + i) * 10;
+    let y = map(value, 50, 259, height, 0);
 
-  for (let s of streams) {
+    fill(0, 255, 70, 150);
+    noStroke();
+    circle(x, y, 30);
 
-    let char = symbols[floor(random(symbols.length))];
-
-    text(char, s.x, s.y);
-
-    s.y += s.speed;
-
-    if (s.y > height) {
-      s.y = random(-200, 0);
-    }
+    fill(255);
+    text(tabla.getString(i, 0), x, y);
   }
 }
