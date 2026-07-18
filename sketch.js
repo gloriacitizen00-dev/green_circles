@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(255, 0, 0);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
     let value = int(tabla.getString(i, 1));
