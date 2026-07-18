@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
     let value = int(tabla.getString(i, 1));
@@ -31,7 +31,7 @@ function draw() {
     circle(x, y, r);
 
     // texto blanco
-    fill(255);
+    fill(255, 220, 0);
     text(tabla.getString(i, 0), x, y);
   }
 }
