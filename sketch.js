@@ -1,3 +1,5 @@
+alert("CARGÓ MI JS");
+
 let tabla;
 let sorteo = [];
 
