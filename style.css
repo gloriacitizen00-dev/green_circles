@@ -93,49 +93,52 @@ canvas {
 /* ---------- Footer ---------- */
 
 .footer{
-    margin-top:80px;
-    padding:60px 30px;
+    background:#00ff66;
+    color:#fff;
     text-align:center;
-    border-top:2px solid #00ff66;
-    background:#ffffff;
+    padding:30px 20px;
+    margin-top:50px;
 }
 
 .footer h2{
-    color:#00ff66;
-    font-size:2rem;
     margin:0;
-    letter-spacing:2px;
+    font-size:1.8rem;
+    color:#ffffff;
+    letter-spacing:1px;
 }
 
 .footer-subtitle{
-    color:#00ff66;
-    margin-top:10px;
-    font-size:1rem;
+    margin:8px 0 18px;
+    color:#ffffff;
+    font-size:.95rem;
+    letter-spacing:1px;
 }
 
 .footer p{
-    color:#00ff66;
-    line-height:1.8;
+    margin:8px 0;
+    color:#ffffff;
+    line-height:1.5;
 }
 
 .footer-text{
     max-width:700px;
-    margin:25px auto;
+    margin:15px auto;
 }
 
 .copyright{
-    font-weight:bold;
-    margin-top:20px;
+    margin-top:15px;
+    font-weight:600;
 }
 
 .footer-links{
-    margin-top:25px;
+    margin-top:18px;
 }
 
 .footer-links a{
-    color:#00ff66;
+    color:#ffffff;
     text-decoration:none;
-    margin:0 15px;
+    margin:0 12px;
+    font-weight:500;
 }
 
 .footer-links a:hover{
