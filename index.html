@@ -1,20 +1,88 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  <head> 
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script> 
-    <link rel="stylesheet" type="text/css" href="style.css"> 
-    <meta charset="utf-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head> 
-  <body> 
-    <main> 
-    
-    </main> <!-- Navigation buttons --> 
-    
-    <div id="nav-buttons"> 
-      <button onclick="window.location.href='https://gloriacitizen00-dev.github.io/Portafolio/'">Return to Portfolio</button>
-      <button onclick="window.open('explanation.html', '_blank')">Project Explanation</button> 
-    </div> <script src="sketch.js"></script> 
-  </body> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/addons/p5.sound.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <!-- Project Description -->
+  <section class="project-info">
+    <h1>Word Frequency Visualization</h1>
+
+    <p>
+      This project explores the visualization of the 200 most frequently used
+      words extracted from a Wikipedia article. The objective was to process
+      the dataset using JavaScript and transform it into an animated visual
+      composition.
+    </p>
+
+    <p>
+      Each moving circle represents one of the words found in the analysis.
+      Rather than presenting the information as a traditional chart or table,
+      the data is displayed as an interactive animation, offering a more
+      engaging and modern way to communicate information.
+    </p>
+
+    <p>
+      One of the most exciting aspects of this project is that the concept can
+      be expanded almost without limits. Different datasets, shapes, colors,
+      animations, and interactions can be combined to create unique visual
+      experiences, showing that data visualization can be both informative and
+      artistic.
+    </p>
+  </section>
+
+  <main></main>
+
+  <!-- Navigation buttons -->
+  <div id="nav-buttons">
+    <button onclick="window.location.href='https://gloriacitizen00-dev.github.io/Portafolio/'">
+      Return to Portfolio
+    </button>
+
+    <button onclick="window.open('explanation.html', '_blank')">
+      Project Explanation
+    </button>
+  </div>
+
+  <!-- p5 Sketch -->
+  <script src="sketch.js"></script>
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <h2>Digital Laboratory</h2>
+
+    <p class="footer-subtitle">
+      Creative Systems · Digital Experiments · Interactive Design
+    </p>
+
+    <p>San José, Costa Rica</p>
+
+    <p class="footer-text">
+      All content, systems, experiments, and visualizations presented on this
+      platform are the intellectual property of the creator.
+    </p>
+
+    <p class="copyright">
+      © 2026 Gloria Martínez. All rights reserved.
+    </p>
+
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="https://gloriacitizen00-dev.github.io/Portafolio/">
+        Brand Portfolio
+      </a>
+    </div>
+
+  </footer>
+
+</body>
 </html>
