@@ -162,3 +162,8 @@ main{
     margin:0;
     padding:0;
 }
+
+.site-header p,
+.site-header p span{
+    color:#00ff66 !important;
+}
