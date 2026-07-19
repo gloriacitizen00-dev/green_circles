@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, 500);
+  createCanvas(800, 800);
   textFont("monospace");
 
   // posiciones aleatorias para tus datos
@@ -15,13 +15,13 @@ for (let i = 0; i < 100; i++) {
 }
 
 function draw() {
- background(255, 255, 255);
+ background(255, 0, 0);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
    let value = int(tabla.getString(i, 1));
 
    let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20; 
-   let y = map(value, 50, 259, 0, 800)
+   let y = map(value, 50, 259, 0, 800) + cos(frameCount * 0.03 + i) * 20;
    let r = map(value, 50, 230, 30, 100);
 
     // círculos verdes
