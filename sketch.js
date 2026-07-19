@@ -6,7 +6,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, 500);
+ for (let i = 0; i < 100; i++) {
+  sorteo.push(random(50, width - 50));
+}
   textFont("monospace");
 
   // posiciones aleatorias para tus datos
@@ -35,7 +37,6 @@ function draw() {
     fill(255, 220, 0);
     textSize(map(value, 50, 259, 12, 28));
     textAlign(CENTER, CENTER);
-    text(tabla.getString(i, 0), x, y);
     text(tabla.getString(i, 0), x, y);
   }
 }
