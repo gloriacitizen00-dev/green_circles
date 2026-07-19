@@ -76,7 +76,8 @@ canvas {
 
 .site-header h1{
     margin:0;
-    font-size:3rem;
+    font-family:'UnifrakturCook', cursive;
+    font-size:3.5rem;
     color:#00ff66;
     font-weight:700;
     line-height:1;
