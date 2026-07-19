@@ -13,11 +13,13 @@ function setup() {
 for (let i = 0; i < 100; i++) { 
   sorteo.push(random(50, 750)); 
 }
+}
 
 function draw() {
  background(255, 0, 0);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
+    
    let value = int(tabla.getString(i, 1));
 
    let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20; 
