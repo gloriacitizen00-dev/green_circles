@@ -1,5 +1,3 @@
-alert("CARGÓ MI JS");
-
 let tabla;
 let sorteo = [];
 
@@ -18,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(255, 0, 0);
+  background(255, 255, 255);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
     let value = int(tabla.getString(i, 1));
