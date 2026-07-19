@@ -22,16 +22,20 @@ function draw() {
     let value = int(tabla.getString(i, 1));
 
     let x = sorteo[i] + sin(frameCount * 0.05 + i) * 20;
-    let y = map(value, 50, 259, 0, 800) + cos(frameCount * 0.03 + i) * 20;
-    let r = map(value, 50, 230, 30, 100);
+    let y = map(value, 50, 259, 50, 450) + cos(frameCount * 0.03 + i) * 20;
+    let r = map(value, 50, 230, 20, 70);
 
     // círculos verdes
     fill(0, 255, 70, 120);
     noStroke();
     circle(x, y, r);
 
-    // texto blanco
+    
+    // texto blanco de las palabras
     fill(255, 220, 0);
+    textSize(map(value, 50, 259, 12, 28));
+    textAlign(CENTER, CENTER);
+    text(tabla.getString(i, 0), x, y);
     text(tabla.getString(i, 0), x, y);
   }
 }
