@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, 800);
+  createCanvas(windowWidth, 500);
   textFont("monospace");
 
   // posiciones aleatorias para tus datos
