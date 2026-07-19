@@ -84,12 +84,15 @@ canvas {
 
 .site-header p{
     margin-top:12px;
-    color:#000;
+    color:#00ff66;
     font-size:1rem;
     letter-spacing:4px;
     text-transform:uppercase;
 }
 
+.site-header p span{
+    color:#000;
+}
 /* ---------- Footer ---------- */
 
 .footer{
