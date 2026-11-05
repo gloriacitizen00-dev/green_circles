@@ -98,39 +98,42 @@ canvas {
     letter-spacing:4px;
     text-transform:uppercase;
 }
+
+
 /* ---------- Footer ---------- */
 
 .footer{
-    background:#00ff66;
-    color:#fff;
-    text-align:center;
-    padding:30px 20px;
+    background:#ffffff;
+    color:#000000;
+    text-align:left;
+    padding:35px 50px;
     margin-top:50px;
+    border-top:1px solid #dddddd;
 }
 
 .footer h2{
     margin:0;
     font-size:1.8rem;
-    color:#ffffff;
+    color:#000000;
     letter-spacing:1px;
 }
 
 .footer-subtitle{
     margin:8px 0 18px;
-    color:#ffffff;
+    color:#000000;
     font-size:.95rem;
     letter-spacing:1px;
 }
 
 .footer p{
     margin:8px 0;
-    color:#ffffff;
+    color:#000000;
     line-height:1.5;
 }
 
 .footer-text{
     max-width:700px;
-    margin:15px auto;
+    margin:15px 0;
 }
 
 .copyright{
@@ -140,12 +143,16 @@ canvas {
 
 .footer-links{
     margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .footer-links a{
-    color:#ffffff;
+    color:#000000;
     text-decoration:none;
-    margin:0 12px;
     font-weight:500;
 }
 
@@ -153,17 +160,18 @@ canvas {
     text-decoration:underline;
 }
 
-canvas{
-    display:block;
-    margin:0 auto;
+/* Facebook button */
+
+.facebook-button{
+    display:inline-block;
+    background:#000000;
+    color:#ffffff !important;
+    padding:10px 22px;
+    border-radius:5px;
+    text-decoration:none !important;
+    transition:0.3s;
 }
 
-main{
-    margin:0;
-    padding:0;
-}
-
-.site-header p,
-.site-header p span{
-    color:#00ff66 !important;
+.facebook-button:hover{
+    background:#333333;
 }
