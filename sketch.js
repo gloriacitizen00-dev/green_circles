@@ -16,7 +16,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 function draw() {
- background(255, 0, 0);
+ background(255);
 
   for (let i = 0; i < tabla.getRowCount(); i++) {
     
