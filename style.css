@@ -39,7 +39,7 @@ canvas {
 .project-title{
     font-family:'UnifrakturCook', cursive;
     font-size:2.8rem;
-    color:#00ff66;
+    color:#000000;
     margin-bottom:25px;
     letter-spacing:1px;
 }
@@ -86,14 +86,14 @@ canvas {
     margin:0;
     font-family:'UnifrakturCook', cursive;
     font-size:3.5rem;
-    color:#00ff66;
+    color:#000000;
     font-weight:700;
     line-height:1;
 }
 
 .site-header p{
     margin-top:12px;
-    color:#00ff66;
+    color:#000000
     font-size:1rem;
     letter-spacing:4px;
     text-transform:uppercase;
